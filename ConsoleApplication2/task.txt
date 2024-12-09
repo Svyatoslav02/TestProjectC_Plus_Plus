@@ -1,0 +1,291 @@
+#include <iostream>
+#include<ctime>
+#include<algorithm>
+#include<vector>
+#include<fstream>
+using namespace std;
+
+void show_info(int* ptr_arr, int size) {
+    int sum = 0;
+    for (size_t i = 0; i < size; i++)
+    {
+        sum += (ptr_arr[i]);
+    }
+    cout << sum;
+}
+struct my_type {
+    int id;
+    string name;
+    int age;
+public:
+    int get_id() {
+        return id;
+    }
+    void set_id(int tmp) {
+        id = tmp;
+    }
+    void show_info() {
+        cout << "name " << name << " age " << age << " id" << id << endl;
+    }
+    my_type() {}
+    my_type(string name,int age , int id) {
+        name = name;
+        age = age;
+        id = id;
+    }
+};
+
+//
+//void show(string name,int age) {
+//
+//    cout << name <<age<< endl;
+//}
+//int show(int age , int name) {
+//    return age + name;
+//}
+//void show() {
+//
+//}
+//void show(int d, int f,int g) {
+//
+//}
+
+//string show_info() {
+//    string text = "dsadas";
+//    return text;
+//}
+//int s() {
+//    return 2;
+//}
+int main()
+{
+    my_type t1("asd",1,1);
+    my_type t2 = {"asd",1,1};
+    my_type t3;
+    t3.name = "sadsa";
+    my_type t4{ "sad",1,1 };
+ /*   if (show_info() == "helo") {
+        cout << "ok";
+}
+    else {
+        cout << "No" << endl;
+    }*/
+    //time_t my_time=time(nullptr);
+    //string name;
+    //cin >> name;
+    //time_t end_my_time= time(nullptr);
+
+
+    //double time_my = difftime(end_my_time, my_time);
+    //cout << time_my;
+
+    //const int size = 10;
+    //int mass[size] = { 1,1,1 }; //    0                       1 
+    //string my_mass_1[size] = { "asdssdsadsdasdasd","sadasddasdasdasdasdasd" };
+    //char my_char[size] = { 's' };
+    //for (int i = 0; i < size; i++) {
+    //    cout << mass[i] << " ";
+    //}
+   /* int matrix[3][3] = { {1,1,1},{1,1,1},{1,1,1} };
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++)
+        {
+            cout << matrix[i][j] << " ";
+        }cout << endl;
+    }*/
+
+ /* 
+    const int size = 10;
+    int mass[size] = { 4,5,1,41,5,1,5,2,52,6 };
+
+    for (int i = 0; i < size-1; i++) {
+        int last_index = i;
+        for (int j = i+1; j < size; j++)
+        {
+            if (mass[j] < mass[last_index]) {
+                last_index = j;
+            }
+        }
+        swap(mass[i],mass[last_index]);
+    }
+    for (size_t i = 0; i < size; i++)
+    {
+        cout << mass[i]<<" ";
+    }*/
+
+
+   // vector<int> my_vector = {1,1,1,1};
+   //// my_vector.push_back(43);//додає елемент в кінець списку 
+   // //my_vector.empty();//метод який перевіряє чи пустий вектор
+   //cout<< my_vector.capacity();//
+   //cout << my_vector.size();
+   // //for (int elem : my_vector) {
+   // //    cout << elem << endl;
+   // //}
+   //my_vector.pop_back();
+   //my_vector.erase(my_vector.begin()+3);
+   //my_vector.end();
+
+        //const int SIZE = 12;
+
+        //double myMass[SIZE] = {};
+
+        //int minIndex, minInd = 0, maxIndex, maxInd = 0;
+        //double min = myMass[12], max = myMass[0];
+
+        //for (int i = 0; i < SIZE; i++) {
+        //    cout << "Enter profit: \t";
+        //    cin >> myMass[i];
+        //}
+
+        //cout << "Enter min number of range: \t";
+        //cin >> minIndex;
+        //cout << "Enter max number of range: \t";
+        //cin >> maxIndex;
+
+        //if (minIndex < maxIndex) {
+        //    for (int i = minIndex; i < maxIndex; i++)
+        //    {
+        //        if (min > myMass[i]) {
+        //            min = myMass[i];
+        //            minInd = i;
+        //        }
+        //    }
+        //    for (int i = minIndex; i < maxIndex; i++) {
+        //        if (max < myMass[i]) {
+        //            max = myMass[i];
+        //            maxInd = i;
+        //        }
+        //    }
+        //    cout << "Max profit is: " << max << " in month number: " << maxInd << endl;
+        //    cout << "Min profit is: " << min << " in month number: " << minInd << endl;
+        //}
+        //else if (minIndex < 0 || maxIndex < 0) {
+        //    cout << "Something went wrong. \n";
+        //}
+        //else {
+        //    cout << "Something went wrong. \n";
+        //}
+
+//int array[3][3] = { {3,1,2 }, {4,5,6},{7,8,9} };
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++) {
+//        cout << array[i][j] << " ";
+//    }
+//    cout << endl;
+//
+//}
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++) {
+//        int value = array[1][j];
+//        array[1][j] = array[0][j];
+//        array[0][j] = value;
+//}
+//    
+//}
+//for (int i = 0; i < 3; i++)
+//{
+//    for (int j = 0; j < 3; j++) {
+//        cout << array[i][j] << " ";
+//    }
+//    cout << endl;
+//
+//}
+
+//int first_value = 5;
+//
+//for (size_t i = 0; i < 5; i++)
+//{
+//    first_value *= 5;
+//}
+
+//int arr[5] = { 2,2,2,2,2 };
+//int* ptr = &arr[0];
+//int* prt_arr = arr;
+//for (size_t i = 0; i < 5; i++)
+//{
+//    cout << prt_arr[i] << " ";
+//}
+//show_info(arr,5);
+
+//int* ptr_number = new int;
+//*ptr_number = 10;
+//cout << *ptr_number;
+//
+//delete ptr_number;
+
+//int size;
+//cin >> size;
+//cout << endl;
+//int* my_arr = new int[size];
+//
+//for (size_t i = 0; i < size; i++)
+//{
+//    my_arr[i] = rand() % 50 + 1;
+//
+//}
+//for (size_t i = 0; i < size; i++)
+//{
+//    cout << my_arr[i] << " ";
+//}
+//
+//delete []my_arr;
+
+
+//int* ptr_value = nullptr;
+//int *name = nullptr;
+//if (ptr_number != nullptr) {
+//    
+//}
+//else {
+//
+//}
+
+
+
+//ifstream- read
+//ofstream- write
+//
+//fstream - read/write
+//
+
+/*
+app - add text to file
+in- open file for reading
+out  - open for writting/ rewritting 
+binary 
+ate - 
+trunc 
+*/
+ofstream f("task.txt",ios::app, ios::in);
+if (f.is_open()) {
+    f << "HELLO NEW " << endl;
+    cout << "OK" << endl;
+    f.close();
+}
+else {
+    cout << "not" << endl;
+}
+ifstream fs("task.txt");
+if (fs.is_open()) {
+    cout << "file is opened" << endl;
+    string text;
+    while (fs >> text) {
+        cout << text << " ";
+   }
+    fs.close();
+}
+}
+
+
+/*
+*  0 1 2
+ _______
+ 0|3 3 3 
+ 1|3 3 3
+ 2|3 3 3
+
+*/
+
