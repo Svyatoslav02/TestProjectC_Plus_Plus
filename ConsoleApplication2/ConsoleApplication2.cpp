@@ -78,7 +78,10 @@ public:
     ~newClass();
 };
 int main() {
-
+    /*
+    
+    
+    */
 
 }
 //void show_info(int* ptr_arr, int size) {
