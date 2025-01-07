@@ -1,90 +1,285 @@
 #include <iostream>
-#include<ctime>
-#include<algorithm>
-#include<vector>
-#include<fstream>
+#include <cassert>
+#include <cmath>
+#include <stdexcept>
+#include <thread>
 using namespace std;
 
-class Factory {
-protected:
-    string model;
-    string name;
-public:
-    Factory() {}
-    Factory(string model, string name) {
-        this->name = name;
-        this->model = model;
-        cout << "Super class Const started" << endl;
+//class Shape {
+//public:
+//    virtual ~Shape() = default;
+//
+//    virtual double calculateArea() const = 0;
+//
+//    virtual void displayInfo() const {
+//        cout << "Shape: No specific information\n";
+//    }
+//};
+//
+//class Rectangle : public Shape {
+//private:
+//    double width;
+//    double height;
+//
+//public:
+//    Rectangle(double width, double height) : width(width), height(height) {
+//        if (width <= 0 || height <= 0) { // implement the log
+//            throw logic_error("Invalid dimensions for Rectangle.");
+//        }
+//    }
+//
+//    double calculateArea() const override {
+//        
+//        // implement the log
+//        return width * height;
+//    }
+//
+//    void displayInfo() const override {
+//        cout << "Rectangle: Width = " << width << ", Height = " << height << endl;
+//    }
+//};
+//
+//class Circle : public Shape {
+//private:
+//    double radius;
+//
+//public:
+//    Circle(double radius) : radius(radius) {
+//        if (radius <= 0) { // implement the log
+//            throw logic_error("Invalid radius for Circle.");
+//        }}
+//
+//    double calculateArea() const override {
+//        
+//        // implement the log
+//        return radius * radius;
+//    }
+//
+//    void displayInfo() const override {
+//        cout << "Circle: Radius = " << radius << endl;
+//    }
+//};
+//
+//// Test methods
+//void tests() {
+//    Rectangle rect(5, 10);
+//    assert(rect.calculateArea() == 50);
+//
+//    Circle circle(7);
+//    //assert(abs(circle.calculateArea() - 153.938) < 0.001);
+//
+//    // Test incorrect parameters
+//    try {
+//        Rectangle invalidRect(-5, 10);
+//        invalidRect.calculateArea();
+//        cout << "Rectangle with invalid dimensions test failed: Exception not thrown!" << endl;
+//    }
+//    catch (logic_error e) {
+//        assert(string(e.what()) == "Invalid dimensions for Rectangle.");
+//    }
+//
+//    // Test incorrect parameters
+//    try {
+//        Circle invalidCircle(0);
+//        invalidCircle.calculateArea();
+//        cout << "Circle with invalid radius test failed: Exception not thrown!" << endl;
+//    }
+//    catch (logic_error e) {
+//        assert(string(e.what()) == "Invalid radius for Circle.");
+//    }
+//    Rectangle rect2(2.5, 4.2);
+//    try {
+//       // assert(abs(rect2.calculateArea() - 10.5) < 0.001);
+//    }
+//    catch (logic_error e) {
+//        cout << "Rectangle (2.5 x 4.2) test failed: " << e.what() << endl;
+//    }
+//    Circle circle2(1.5);
+//  //  assert(abs(circle2.calculateArea() - 7.068) < 0.001);
+//
+//
+//}
+//
+//int main() {
+//    try {
+//        tests();
+//        cout << "All tests passed!" << endl;
+//    }
+//    catch (logic_error e) {
+//        cout << "Rectangle test failed: " << e.what() << endl;
+//    }
+//    catch (exception e) {
+//        cout << "Test failed: " << e.what() << endl;
+//    }
+//}
+//
+#include <mutex>
+
+mutex mt;
+void show() {
+  //  mt.lock();
+    lock_guard<mutex>auto_lock(mt);
+    char arr[3] = { 'H','E','L' };
+    cout << "id: " << this_thread::get_id() << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << arr[i] << " ";
     }
-    void show() {}
-
-};
-class NewFactory:public Factory {
-    string newName;
-public:
-
-    NewFactory(string name) {
-        newName = name;
-    }
-    void show() {}
-};
-class Vag : public NewFactory{
-    string models_group;
-public:
-    Vag(string model, string name, string models_group,  string name__) :NewFactory(name__) {
-        this->models_group = models_group;
-    }
-    void show() {
-        cout << model << " " << name << " " << models_group<<endl;
-    }
-};
-
-class A {
-public:
-    virtual void say_hi() {
-        cout << "class A" << endl;
-    }
-};
-class B:public A {
-public:
-    void say_hi() override {
-        cout << "Class B" << endl;
-    }
-};
-class C :public B {
-public:
-    void say_hi()override {
-        cout << "Class C" << endl;
-
-    }
-
-};
-
-class Abstract_class {
-public:
-    virtual void print() = 0;
-    virtual void print_new() = 0;
-    virtual void print_last() = 0;
-    virtual ~Abstract_class();
-};
-class newClass : Abstract_class {
-
-public:
-    void print()override {
-        cout << "print" << endl;
-    }
-
-
-    ~newClass();
-};
-int main() {
-    /*
-    
-    
-    */
-
+   // mt.unlock();
 }
-//void show_info(int* ptr_arr, int size) {
+void show_heelo() {
+    cout << "Hello world" << endl;
+}
+
+//class DisivionByZero :public exception {
+//    string msg;
+//public:
+//    DisivionByZero() {}
+//    DisivionByZero(string msg) {
+//        this->msg = msg;
+//    }
+//    const char* what()const override {
+//        return msg.c_str();
+//    }
+//};
+//void divison(int a , int b) {
+//
+//    if (b == 0) {
+//       throw "  if (b == 0) {}";
+//    }
+//    if (a == 1) {
+//        throw - 1;
+//    }
+//    cout << a / b;
+//}
+
+
+int main() {
+
+    //try {
+    //
+  /*      int number = 10;
+        int number_2 = 0;
+        cout << number / number_2;*/
+    
+    
+    //}
+    //catch (exception e) {
+    //    cout << e.what();
+    //}
+   /* cout << "Start"<<endl;
+    try {
+        cout << "Before divide" << endl;
+        divison(10, 0);
+        cout << "After divide" << endl;
+
+    }
+    catch (int) {
+        cout << "int" << endl;
+    }
+    catch (const char*) {
+        cout << "char"<< endl;
+    }
+    catch (DisivionByZero e) {
+        cout << "DisivionByZero: " << e.what() << endl;
+    }
+    catch (exception e) {
+        cout << "exception " << e.what() << endl;
+    }
+    catch (...) {
+        cout << "... Error" << endl;
+    }*/
+
+
+    thread my_th_1(show);
+    thread my_th_2(show_heelo);
+
+    my_th_1.join();
+    my_th_2.join();
+}
+
+
+
+//
+//class Factory {
+//protected:
+//    string model;
+//    string name;
+//public:
+//    Factory() {}
+//    Factory(string model, string name) {
+//        this->name = name;
+//        this->model = model;
+//        cout << "Super class Const started" << endl;
+//    }
+//    void show() {}
+//
+//};
+//class NewFactory:public Factory {
+//    string newName;
+//public:
+//
+//    NewFactory(string name) {
+//        newName = name;
+//    }
+//    void show() {}
+//};
+//class Vag : public NewFactory{
+//    string models_group;
+//public:
+//    Vag(string model, string name, string models_group,  string name__) :NewFactory(name__) {
+//        this->models_group = models_group;
+//    }
+//    void show() {
+//        cout << model << " " << name << " " << models_group<<endl;
+//    }
+//};
+//
+//class A {
+//public:
+//    virtual void say_hi() {
+//        cout << "class A" << endl;
+//    }
+//};
+//class B:public A {
+//public:
+//    void say_hi() override {
+//        cout << "Class B" << endl;
+//    }
+//};
+//class C :public B {
+//public:
+//    void say_hi()override {
+//        cout << "Class C" << endl;
+//
+//    }
+//
+//};
+//
+//class Abstract_class {
+//public:
+//    virtual void print() = 0;
+//    virtual void print_new() = 0;
+//    virtual void print_last() = 0;
+//    virtual ~Abstract_class();
+//};
+//class newClass : Abstract_class {
+//
+//public:
+//    void print()override {
+//        cout << "print" << endl;
+//    }
+//
+//
+//    ~newClass();
+//};
+//int main() {
+//    /*
+//    
+//    
+//    */
+//
+//}
+////void show_info(int* ptr_arr, int size) {
 //    int sum = 0;
 //    for (size_t i = 0; i < size; i++)
 //    {
