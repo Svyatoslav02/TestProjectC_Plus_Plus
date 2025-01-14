@@ -3,7 +3,83 @@
 #include <cmath>
 #include <stdexcept>
 #include <thread>
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
+
+
+
+class Math {
+    int x;
+    int y;
+    public:
+    explicit Math(int x) {
+            this->x = x;
+    }
+
+
+};
+
+
+void change(const int*tmp) {
+    int* return_value = const_cast<int*>(tmp);
+    *return_value = 10;
+}
+
+class First {
+public:
+    virtual ~First() {}
+
+};
+
+class Second : public First {
+
+
+};
+
+int main() {
+
+    First* obj = new First();
+
+    Second* obj1 = dynamic_cast<Second*>(obj);
+
+
+
+   /* const int x = 10;
+    int* ptr = const_cast<int*>(&x);
+    *ptr = 57;
+
+    cout << x;*/
+
+
+    //const int size = 1;
+    //change(&size);
+
+    //cout << size<<endl;
+
+    double number = 10.5;
+
+    float second_number= static_cast<float> (number);
+    cout << second_number;
+
+  //  using namespace NameSpace1::NameSpace2::NameSpace3;
+  //  cout << finalNUmber << endl;
+  //// using namespace NameSpace1::NameSpace2::NameSpace3;
+  //  NameSpace1::NameSpace2::NameSpace3::show();
+  //  BankAccount::Person obj("Mark");
+  //  obj.show();
+
+
+  //  BankAccount::show();
+
+  //  cout<<BankAccount::result(3,3)<<endl;
+  // // show();
+    
+}
+
+
+
 
 //class Shape {
 //public:
@@ -115,20 +191,20 @@ using namespace std;
 //
 #include <mutex>
 
-mutex mt;
-void show() {
-  //  mt.lock();
-    lock_guard<mutex>auto_lock(mt);
-    char arr[3] = { 'H','E','L' };
-    cout << "id: " << this_thread::get_id() << endl;
-    for (int i = 0; i < 3; i++) {
-        cout << arr[i] << " ";
-    }
-   // mt.unlock();
-}
-void show_heelo() {
-    cout << "Hello world" << endl;
-}
+//mutex mt;
+//void show() {
+//  //  mt.lock();
+//    lock_guard<mutex>auto_lock(mt);
+//    char arr[3] = { 'H','E','L' };
+//    cout << "id: " << this_thread::get_id() << endl;
+//    for (int i = 0; i < 3; i++) {
+//        cout << arr[i] << " ";
+//    }
+//   // mt.unlock();
+//}
+//void show_heelo() {
+//    cout << "Hello world" << endl;
+//}
 
 //class DisivionByZero :public exception {
 //    string msg;
@@ -153,50 +229,50 @@ void show_heelo() {
 //}
 
 
-int main() {
-
-    //try {
-    //
-  /*      int number = 10;
-        int number_2 = 0;
-        cout << number / number_2;*/
-    
-    
-    //}
-    //catch (exception e) {
-    //    cout << e.what();
-    //}
-   /* cout << "Start"<<endl;
-    try {
-        cout << "Before divide" << endl;
-        divison(10, 0);
-        cout << "After divide" << endl;
-
-    }
-    catch (int) {
-        cout << "int" << endl;
-    }
-    catch (const char*) {
-        cout << "char"<< endl;
-    }
-    catch (DisivionByZero e) {
-        cout << "DisivionByZero: " << e.what() << endl;
-    }
-    catch (exception e) {
-        cout << "exception " << e.what() << endl;
-    }
-    catch (...) {
-        cout << "... Error" << endl;
-    }*/
-
-
-    thread my_th_1(show);
-    thread my_th_2(show_heelo);
-
-    my_th_1.join();
-    my_th_2.join();
-}
-
+//int main() {
+//
+//    //try {
+//    //
+//  /*      int number = 10;
+//        int number_2 = 0;
+//        cout << number / number_2;*/
+//    
+//    
+//    //}
+//    //catch (exception e) {
+//    //    cout << e.what();
+//    //}
+//   /* cout << "Start"<<endl;
+//    try {
+//        cout << "Before divide" << endl;
+//        divison(10, 0);
+//        cout << "After divide" << endl;
+//
+//    }
+//    catch (int) {
+//        cout << "int" << endl;
+//    }
+//    catch (const char*) {
+//        cout << "char"<< endl;
+//    }
+//    catch (DisivionByZero e) {
+//        cout << "DisivionByZero: " << e.what() << endl;
+//    }
+//    catch (exception e) {
+//        cout << "exception " << e.what() << endl;
+//    }
+//    catch (...) {
+//        cout << "... Error" << endl;
+//    }*/
+//
+//
+//    thread my_th_1(show);
+//    thread my_th_2(show_heelo);
+//
+//    my_th_1.join();
+//    my_th_2.join();
+//}
+//
 
 
 //
